@@ -406,7 +406,7 @@ GridManager.prototype.retreiveAndParseGrid = function (gridNumber, callback) {
     console.info('\n\t[GRIDMANAGER] Try to load ' + gridAddr);
 
     // If an error occurs, raise failure callback
-    if (res.statusCode !== 200) {
+    if (res.statusCode !== 200 && res.statusCode !== 302) {
       onGetGridError(callback, 'Wrong statusCode ' + res.statusCode);
     }
     else {
